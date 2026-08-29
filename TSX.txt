@@ -1,0 +1,78 @@
+import { ArrowRight, Play } from 'lucide-react';
+
+export default function Hero() {
+  return (
+    <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-x-hidden">
+      <div className="absolute inset-0 z-0">
+        <img
+          src="https://images.pexels.com/photos/9028761/pexels-photo-9028761.jpeg?auto=compress&cs=tinysrgb&w=1920"
+          alt="Auto deportivo personalizado"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-neutral-950/70 via-neutral-950/60 to-neutral-950" />
+        <div className="absolute inset-0 bg-gradient-to-r from-neutral-950/80 via-transparent to-transparent" />
+      </div>
+
+      <div className="absolute inset-0 z-0 opacity-30">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-primary-500/20 blur-[120px]" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-accent-500/10 blur-[120px]" />
+      </div>
+
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8 pt-24 pb-12">
+        <div className="max-w-3xl">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-6 animate-fade-in">
+            <span className="w-2 h-2 rounded-full bg-success-500 animate-pulse" />
+            <span className="text-sm text-neutral-200 font-medium">Workshop abierto — Citas disponibles</span>
+          </div>
+
+          <h1 className="font-display font-extrabold text-4xl sm:text-6xl lg:text-7xl leading-[1.1] text-white animate-fade-in-up break-words">
+            Transformamos tu auto
+            <br />
+            en una <span className="text-gradient">obra de arte</span>
+          </h1>
+
+          <p className="mt-6 text-lg text-neutral-300 max-w-xl leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+            Especialistas en personalización, tuning y detailing de vehículos
+            de alta gama. Más de 15 años dando vida a autos únicos.
+          </p>
+
+          <div className="mt-10 flex flex-wrap items-center gap-4 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+            <a
+              href="#contacto"
+              className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-gradient-to-r from-primary-500 to-primary-600 text-white font-semibold shadow-xl shadow-primary-500/30 hover:shadow-primary-500/50 hover:scale-105 transition-all"
+            >
+              Agendar cita
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </a>
+            <a
+              href="#galeria"
+              className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-full glass text-white font-semibold hover:bg-white/10 transition-all"
+            >
+              <Play className="w-4 h-4" fill="currentColor" />
+              Ver trabajos
+            </a>
+          </div>
+
+          <div className="mt-14 flex flex-wrap gap-8 sm:gap-12 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+            {[
+              { value: '15+', label: 'Años de experiencia' },
+              { value: '800+', label: 'Proyectos completados' },
+              { value: '100%', label: 'Clientes satisfechos' },
+            ].map((stat) => (
+              <div key={stat.label}>
+                <div className="font-display font-bold text-2xl sm:text-3xl text-white">{stat.value}</div>
+                <div className="text-sm text-neutral-400 mt-1">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 hidden md:block">
+        <div className="w-6 h-10 rounded-full border-2 border-white/20 flex justify-center pt-2">
+          <div className="w-1 h-2 rounded-full bg-white/50 animate-bounce" />
+        </div>
+      </div>
+    </section>
+  );
+}
